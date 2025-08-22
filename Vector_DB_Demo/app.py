@@ -42,6 +42,9 @@ documents = [Document(text=t) for t in chunks]
 # create client and a new collection
 # chromadb.EphemeralClient saves data in-memory.
 chroma_client = chromadb.PersistentClient(path="./mini-chunked-dataset")
+# Delete collection on rerun if already exists
+if chroma_client.get_collection("mini-chunked-dataset"):
+    chroma_client.delete_collection("mini-chunked-dataset")
 chroma_collection = chroma_client.create_collection("mini-chunked-dataset")
 
 # Define a storage context object using the created vector database.
