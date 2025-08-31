@@ -1,1 +1,5 @@
 .env
+/mini-chunked-dataset
+/mini-llama-articles
+rag_eval_dataset_open_source_models.json
+rag_eval_dataset.json
